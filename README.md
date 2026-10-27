@@ -10,7 +10,8 @@ This template is a game landing page implemented with Next.js static generation 
 
 ## Local Development
 Install dependencies: `npm install`
-Local development: `npm run dev`
+Local development: `npm ci
+npm run dev`
 
 ## Style Theme
 You can modify the color theme in `/src/styles/globals.css`.
@@ -24,3 +25,8 @@ You can modify the color theme in `/src/styles/globals.css`.
 - Purely static pages, excellent Lighthouse scores
 - Modular, responsive and scalable components
 
+
+
+## Dependency security
+
+The project now pins Next.js and React to patched releases and the CI workflow runs `npm audit --omit=dev --audit-level=high`, lint, TypeScript checks, a production build, and syntax validation for the image compression script. Keep `package.json` and `package-lock.json` synchronized; do not deploy a stale lockfile.
