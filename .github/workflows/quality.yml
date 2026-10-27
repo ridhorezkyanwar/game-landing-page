@@ -28,6 +28,8 @@ jobs:
         run: npm ci
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
+      - name: Check image compression script syntax
+        run: node --check scripts/compress-images.mjs
       - name: Lint
         run: npm run lint
       - name: Type-check
